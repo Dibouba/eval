@@ -13,7 +13,7 @@ on orders.ord_id = orders_details.ode_ord_id
 JOIN products
 on orders_details.ode_pro_id = products.pro_id
 WHERE ord_id = p_ord_id;
-union
+
 SELECT
 Round((ode_unit_price/100*20),1) AS 'TVA', ode_discount AS 'Remise',
 SUM((ode_unit_price+ode_unit_price/100 * 20)-(ode_unit_price/100 * ode_discount)) AS 'PTTC'
